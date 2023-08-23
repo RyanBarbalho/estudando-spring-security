@@ -36,4 +36,23 @@ public class WebSecurityConfigAtualizada {
     public PasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
     }
+
+//    @Bean
+//    public SecurityFilterChain filterChain(HttpSecurity http)  throws Exception{
+//        http
+//                .httpBasic()//utilizar do http basic
+//                .and()
+//                .authorizeHttpRequests()
+//                .antMatchers(HttpMethod.GET, "/parking-spot/**").permitAll()//permitir acesso a todos
+//                .antMatchers(HttpMethod.POST, "/parking-spot/**").hasAnyRole("USER","ADMIN")//permitir acesso a cadastrados
+//                .antMatchers(HttpMethod.PUT, "/parking-spot/**").hasRole("USER")//permitir acesso a cadastrados
+//                .antMatchers(HttpMethod.DELETE, "/parking-spot/**").hasRole("ADMIN")//apenas admins
+//                .anyRequest().authenticated()   //para todas as requisiçoes deve estar autenticado
+//                .and()
+//                .csrf().disable();//desbilitar bloqueio de solicitaçoes json para post,delete,etc
+//        //se csrf estiver habilitado é preciso enviar o token csrf gerado pelo spring
+//        //para ser autenticado
+//
+//        return http.build();
+//    }
 }
