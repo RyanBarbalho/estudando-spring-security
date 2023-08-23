@@ -27,12 +27,12 @@ public class UserModel implements UserDetails, Serializable {
     @ManyToMany
     @JoinTable(name = "TB_USERS_ROLES",
             joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "role_id"))
+            inverseJoinColumns = @ JoinColumn(name = "role_id"))
     private List<RoleModel> roles; //maria pode ser admin e user ou so admin
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+        return this.roles;
     }
 
     @Override
